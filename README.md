@@ -101,11 +101,11 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
      ```python
      from azure.ai.vision import VisionClient, VisionApiKeyCredential
 
-     endpoint = "your_vision_endpoint"
-     credential = VisionApiKeyCredential("your_api_key")
+     endpoint = ("https://sams-comp-vision.cognitiveservices.azure.com/")
+     credential = VisionApiKeyCredential("FLalv1znBb5MsxCTHhUI4KKFpfg0KUPdtjlHjabqWqNH1dDYLdvXJQQJ99AKACYeBjFXJ3w3AAAFACOGiJ6k")
 
      client = VisionClient(endpoint, credential)
-     with open("sample-image.jpg", "rb") as image:
+     with open("cat.jpg", "rb") as image:
          response = client.detect_objects(image=image)
 
      for detected_object in response.objects:
