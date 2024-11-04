@@ -1,4 +1,4 @@
-# # HHA504 Assignment: Exploring AI and Analytics with Pre-trained Models in GCP and Azure
+# HHA504 Assignment: Exploring AI and Analytics with Pre-trained Models in GCP and Azure
 
 ## Objective
 This assignment demonstrates the use of pre-trained models in **Google Cloud Platform (GCP)** and **Azure** for speech-to-text transcription and object detection. The goal is to evaluate model capabilities, compare results across platforms, and document any challenges faced.
@@ -40,9 +40,14 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
          print("Transcript: {}".format(result.alternatives[0].transcript))
      ```
 
+![image](https://github.com/user-attachments/assets/5d8fb398-f240-4b4d-968a-20d94300c5fa)
+![image](https://github.com/user-attachments/assets/030f1ef6-993f-42a3-8230-5c43a37d5a25)
+![image](https://github.com/user-attachments/assets/27468242-1cf7-4ecf-a757-62e3acbef0ea)
+
+
 ### Results
-- **Transcript Output**: (Add the actual transcript here)
-- **Observations**: The transcription accuracy was satisfactory, capturing most words clearly with minor errors on certain terms.
+- **Transcript Output**: Hello this is my sample audio
+- **Observations**: The transcription accuracy was satisfactory, capturing words clearly with no errors.
 
 ### Challenges
 - **Stereo to Mono Conversion**: Initially, the API returned an error due to stereo format. This was resolved by converting the audio to mono.
@@ -62,7 +67,7 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
      from google.cloud import vision
 
      client = vision.ImageAnnotatorClient()
-     with open("sample-image.jpg", "rb") as image_file:
+     with open("cat.jpg", "rb") as image_file:
          content = image_file.read()
      image = vision.Image(content=content)
 
@@ -71,11 +76,14 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
          print("Object detected: {} (confidence: {})".format(object_.name, object_.score))
      ```
 
+![image](https://github.com/user-attachments/assets/1daa22dd-2338-4c6f-8a4d-bbcea48e694a)
+
+
 ### Results
 - **Detected Objects and Confidence Scores**:
-  - Object 1: [Object name] - Confidence: [Confidence score]
-  - Object 2: [Object name] - Confidence: [Confidence score]
-- **Observations**: The model was effective in detecting common objects in the image, with confidence scores above 90% for most items.
+  - Object detebcted: Animal (Confidence: 0.6315107345581055)
+  - Object detected: Cat (Confidence: 0.5887526869773865)
+- **Observations**: The model was effective in detecting common objects in the image.
 
 ### Challenges
 - **Initial Authentication Setup**: Required setting up the JSON key file, which was addressed in the first section and applied here.
@@ -116,11 +124,6 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
 ---
 
 ## 4. Comparison of GCP and Azure
-
-| Platform | Speech-to-Text Accuracy | Object Detection Accuracy | Ease of Use |
-|----------|--------------------------|--------------------------|-------------|
-| GCP      | [Insert rating]          | [Insert rating]          | [Insert rating] |
-| Azure    | N/A                      | [Insert rating]          | [Insert rating] |
 
 - **GCP vs. Azure**: GCP’s Speech-to-Text API was effective, while both GCP and Azure provided accurate object detection. However, Azure’s Vision API slightly differed in confidence scores.
 - **Ease of Use**: Both platforms had straightforward SDKs, though initial setup in Vertex AI Workbench required more configuration for authentication with GCP.
