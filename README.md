@@ -114,8 +114,8 @@ This assignment demonstrates the use of pre-trained models in **Google Cloud Pla
 
 ### Results
 - **Detected Objects and Confidence Scores**:
-  - Object 1: [Object name] - Confidence: [Confidence score]
-  - Object 2: [Object name] - Confidence: [Confidence score]
+  - Object: - Confidence:
+
 - **Observations**: The Azure Vision API detected similar objects as the GCP Vision API, with slight variations in confidence scores.
 
 ### Challenges
